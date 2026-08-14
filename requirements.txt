@@ -1,0 +1,50 @@
+# Source-audited runtime dependencies for PyraVid.
+# Target: Python 3.12 on Linux. This file intentionally excludes the vLLM
+# server, which requires a separate Torch 2.9 environment; see
+# requirements_vllm.txt.
+# Non-Python runtime requirement: ffmpeg and ffprobe must be on PATH.
+
+# Core graph construction, retrieval, QA, and API clients
+anthropic==0.71.0
+json-repair==0.55.0
+langchain-core==1.2.7
+networkx==3.4.2
+numpy==1.26.4
+openai==2.6.1
+pandas==2.3.3
+qdrant-client==1.15.1
+rank-bm25==0.2.2
+scikit-learn==1.6.1
+tiktoken==0.12.0
+tqdm==4.66.3
+typing-extensions==4.15.0
+
+# Video fact extraction and key-frame handling
+moviepy==2.1.2
+Pillow==10.4.0
+
+# Face extraction and clustering
+hdbscan==0.8.40
+insightface==0.7.3
+onnxruntime==1.22.1
+opencv-python==4.11.0.86
+
+# Voice extraction and SpeakerLab ERes2NetV2 embeddings
+# TorchAudio 2.8 is deliberate: voice_processing.py calls
+# torchaudio.sox_effects, which was removed in TorchAudio 2.9.
+datasets==3.6.0
+fastcluster==1.2.6
+funasr==1.2.6
+modelscope==1.28.0
+pydub==0.25.1
+PyYAML==6.0.2
+scipy==1.15.3
+soundfile==0.13.1
+speakerlab==0.0.6
+torch==2.8.0
+torchaudio==2.8.0
+torchvision==0.23.0
+
+# SpeakerLab imports Transformers transitively. Pin it so the base environment
+# remains reproducible and compatible with the optional Qwen-Omni overlay.
+transformers==4.57.6

@@ -1,0 +1,10 @@
+# vLLM model-serving environment. Keep this separate from requirements.txt:
+# vLLM 0.12 pins Torch/TorchAudio 2.9, while PyraVid voice processing uses a
+# TorchAudio API that exists only through 2.8.
+# The selected Torch wheel/CUDA backend must also match the node's NVIDIA
+# driver; Python dependency resolution cannot validate that system boundary.
+torch==2.9.0
+torchaudio==2.9.0
+torchvision==0.24.0
+transformers==4.57.6
+vllm==0.12.0

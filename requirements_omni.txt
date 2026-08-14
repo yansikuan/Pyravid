@@ -1,0 +1,11 @@
+# Optional local Qwen2.5-Omni backend used by QwenOmniClient and the Socratic
+# baseline. Install this overlay in the PyraVid application environment.
+-r requirements.txt
+
+accelerate==0.34.2
+qwen-omni-utils[decord]==0.0.8
+
+# QwenOmniClient explicitly requests attn_implementation="flash_attention_2".
+# Install Torch first, then install this file with --no-build-isolation so that
+# flash-attn builds against the selected Torch/CUDA toolchain.
+flash-attn==2.7.4.post1

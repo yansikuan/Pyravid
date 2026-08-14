@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyravid"
+version = "0.1.0"
+description = "Hierarchical multimodal memory for long-horizon video reasoning"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+authors = [{ name = "PyraVid contributors" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "anthropic==0.71.0",
+    "datasets==2.20.0",
+    "json-repair>=0.39",
+    "langchain-core>=1.0,<2",
+    "networkx==3.4.2",
+    "numpy==1.26.4",
+    "openai==2.6.1",
+    "pandas>=2.0,<3",
+    "qdrant-client==1.15.1",
+    "rank-bm25==0.2.2",
+    "rouge-score==0.1.2",
+    "scikit-learn==1.6.1",
+    "tiktoken==0.12.0",
+    "tqdm==4.66.3",
+    "typing-extensions>=4.8",
+]
+
+[project.optional-dependencies]
+video = [
+    "moviepy>=2.0,<3",
+    "opencv-python>=4.9",
+    "pillow>=10",
+]
+face = [
+    "hdbscan>=0.8",
+    "insightface>=0.7",
+    "onnxruntime>=1.17",
+]
+voice = [
+    "pydub>=0.25",
+    "torch>=2.4",
+    "torchaudio>=2.4",
+]
+omni = [
+    "accelerate>=1.0",
+    "qwen-omni-utils",
+    "transformers>=4.57",
+]
+serve = ["vllm>=0.12"]
+dev = [
+    "pre-commit>=4",
+    "pytest>=8",
+    "ruff>=0.12",
+]
+
+[tool.setuptools.packages.find]
+include = ["prototype*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: requires local services, models, or external credentials",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+exclude = ["prototype/tools/prompts.py"]
+
+[tool.ruff.lint]
+# Keep CI focused on errors that can change runtime behavior. The preserved
+# research variants still contain style debt that can be cleaned incrementally.
+select = ["E9", "F63", "F7", "F82"]

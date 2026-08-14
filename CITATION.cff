@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use CAM, please cite the associated paper."
+title: "CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension"
+type: software
+version: 0.1.0
+date-released: 2026-07-26
+repository-code: "https://github.com/OWNER/REPOSITORY"
+preferred-citation:
+  type: article
+  title: "CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension"
+  year: 2025
+  url: "https://arxiv.org/abs/2510.05520"

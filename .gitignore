@@ -1,0 +1,107 @@
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+.envrc
+config/*key*
+config/local.*
+*.pem
+*.key
+
+# Python environments, caches, and build products
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+build/
+dist/
+.venv/
+.venv-*/
+.cam-test-venv/
+.uv-cache/
+pip-wheel-metadata/
+
+# Editors and local agent state
+.vscode/
+.idea/
+.codex/
+.agents/
+*.swp
+*.swo
+*~
+
+# Datasets and extracted media
+data/*
+!data/.gitkeep
+processed_data/
+key_frames/
+keyframes/
+extracted_frames/
+video_chunks/
+audio_chunks/
+
+# Generated hierarchical memory and local databases
+memory/
+super_graphs/
+super_embeddings/
+vector_store/
+vectorstore*/
+qdrant*/
+character_qdrant*/
+snapshot/
+
+# Model weights, checkpoints, and download caches
+models/
+checkpoints/
+pretrained_models/
+downloaded_models/
+.cache/
+huggingface/
+answer_model_test/
+selection_model*/
+edge_generation_model/
+edge_selection_model/
+socratic_VL_model/
+test_rllm/
+
+# Experiment outputs, intermediate results, and reports
+artifacts/
+output/
+outputs/
+result/
+results/
+logs/
+runs/
+wandb/
+mlruns/
+lightning_logs/
+*.log
+*.pid
+*.out
+*.err
+slurm-*.out
+nohup.out
+token_usage_summary.*
+*_latencies.csv
+*_output.json
+
+# Temporary and patch-generated files
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.rej
+debug.json
+
+# Platform files
+.DS_Store
+Thumbs.db
