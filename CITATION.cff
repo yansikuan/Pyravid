@@ -4,7 +4,7 @@ title: "PyraVid: Hierarchical Multimodal Memory for Long-Horizon Video Reasoning
 type: software
 version: 0.1.0
 date-released: 2026-05-16
-repository-code: "https://github.com/OWNER/REPOSITORY"
+repository-code: "https://github.com/yansikuan/Pyravid"
 preferred-citation:
   type: article
   title: "PyraVid: Hierarchical Multimodal Memory for Long-Horizon Video Reasoning"
